@@ -1,0 +1,19 @@
+How to connect ssh host to guest OS in Virtual Box.
+
+1. Create a New adator using file > host network manager > create > configure adaptor Automatically.
+
+it will assign a IP address to guest OS 
+
+get ip add using ifconfig command . which ip at ensp08 have that ip needed to connect the guest.
+
+ping that ip to host machine ( windows os ) if ping is ok , then you can take ssh sessison of guest os 
+
+using ssh username@ipaddress.
+
+if you didn't get ssh seession then check whether ssh service is running at guest os or not if not start ssh service 
+
+by this command - systemctl start ssh or systemctl start open-ssh , 
+
+if ssh is not present in guest os install open ssh server > apt get install open-ssh 
+
+to check ssh pacakge > apt search ssh or yum search ssh 
