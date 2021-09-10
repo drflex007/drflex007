@@ -27,3 +27,4 @@ git status - this will show the status of file in the git or this will show file
 git  show - this will show all the changes in the files with commit id
 git show commit_id = this will show only that changes which commit id's are you mention.
 git log --online = it will show all the changes in the git file in one line.
+git log --grep "commit"
