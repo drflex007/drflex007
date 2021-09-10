@@ -7,8 +7,8 @@ Command - Sudo su
 yum update -y
 yun install git -y
 git --version 
-git config -- global username "alok/alok2"
-git config -- global user email "alok@abc.com)
+git config -- global user.name "alok/alok2"
+git config -- global user.mail "alok@abc.com)
 
 
 Git having three stages -
