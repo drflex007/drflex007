@@ -40,3 +40,37 @@ Example - cat > git_conflict = this is git conflict ( file on master )  and cat 
 this will create a git conflict. git can't understand which content are first used so that why git conflict occur.
 
 Solution - just open the file any editor and made some changees on it . git will automatically undertand which content are first and which are second.
+
+Note - Every branch local repo push indivisually ( git push commnad only push branch local repo not every branch repo )
+
+
+Git Stashing- it is a storage which store files that you don't want in git production area. 
+
+it is a feature that will give you power to save your unfinished work( Code ) without adding to staging area or commiting.
+and work on the new code or new work at workplace area.
+
+Situtation where we use - suppose you are implementing a new feature for your product your code is in last stage and suddenly client esclation came that you have
+to work on the new feature. so here you can not commit half of the code on repo and you don't want waste your hour's of hard code , so we use stashing to store this code
+aside in the same directary and start working on the new feature as required by client and when your client require feaature are done , just commit that feature and  start 
+working on your stashing code. 
+
+
+Note - you can store many files in the stashing , there is no limit on that. 
+
+Commands -
+To stash an Item
+       git stash 
+To see stashed items list 
+       git stash  list 
+To apply  stashed items
+       git stash apply stash@{0}
+Then you can git add and git commit.
+Note - in stash every files are store in the stack format or array data sturture format.
+Note - when getting code from stash it will copy and paste in workplace area not cut and paste.
+
+To clear the stash items
+        git stash clear
+        
+
+
+
