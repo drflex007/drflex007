@@ -32,3 +32,6 @@ git branch - it will show cuurnet working branch or all the braches of the tree.
 git branch <branch name> - this will create the new branch 
 note - master is the main branch in all the tree
 git checkout <branch name >  - this will lead you branch which you mention in the agrument.
+mearge- you can't merge two branches from diff repositorary. we use pulling mechnasim to merge branches. 
+git merge <Branch_name> this will merge current branch to existing branch.
+
