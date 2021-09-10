@@ -28,3 +28,7 @@ git  show - this will show all the changes in the files with commit id
 git show commit_id = this will show only that changes which commit id's are you mention.
 git log --online = it will show all the changes in the git file in one line.
 git log --grep "commit"
+git branch - it will show cuurnet working branch or all the braches of the tree.
+git branch <branch name> - this will create the new branch 
+note - master is the main branch in all the tree
+git checkout <branch name >  - this will lead you branch which you mention in the agrument.
