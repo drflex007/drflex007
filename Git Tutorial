@@ -35,3 +35,8 @@ git checkout <branch name >  - this will lead you branch which you mention in th
 mearge- you can't merge two branches from diff repositorary. we use pulling mechnasim to merge branches. 
 git merge <Branch_name> this will merge current branch to existing branch.
 
+Git Conflict - when you create same name file on diff branch but files content are different or load different manner. 
+Example - cat > git_conflict = this is git conflict ( file on master )  and cat > git_conflict = this is second file git conflict ( file on branch1 )
+this will create a git conflict. git can't understand which content are first used so that why git conflict occur.
+
+Solution - just open the file any editor and made some changees on it . git will automatically undertand which content are first and which are second.
