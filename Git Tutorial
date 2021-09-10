@@ -20,3 +20,10 @@ Commit ID - it is used for saving diff version of your code.
 Push - Push are used for pushig the command to any online repo. ( Github - owned by Microsoft and GitLab - Opensource repo ) 
 Pull - Pull are used for pulling all the code from online repo. 
 Branch - It is creating a tree struture that will help to adding new feature in the code. ( Story - making a dish and pour out some dish from main plate and experiment on that.) 
+git init - intitilizing the git 
+git add . -  this will add all the cuurent working directory files into staging area.
+git commit -m " any random message " - this will commit all the changes in git version control system.
+git status - this will show the status of file in the git or this will show files changes stage area.
+git  show - this will show all the changes in the files with commit id
+git show commit_id = this will show only that changes which commit id's are you mention.
+git log --online = it will show all the changes in the git file in one line.
