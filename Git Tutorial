@@ -153,5 +153,8 @@ git show < Tag Name >
 To delete a tag
 git tag -d < tagname >
 
+Github Clone
 
+git clone < url of github repo >
+it creates a local repo automatically in linux machine the same name as the github account.
 
