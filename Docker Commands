@@ -1,0 +1,16 @@
+# To see running containers 
+docker ps 
+# To see all containers 
+docker ps -a
+# To see all the images
+docker image ls 
+# To get Help from docker 
+docker --help ( it will print all the docker expected commnad , that will help you a lot )
+# To pull image from repository 
+docker pull image_name:tag
+# To  run a container in docker
+docker run image_name
+# To run a container with many argument
+docker run -it (interactive terminal) -d (deattahed mode ) -e (enviornment variable) --name ( Custom_container_name) image_name
+# To check Docker Version
+docker --version
