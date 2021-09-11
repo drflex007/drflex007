@@ -112,5 +112,46 @@ git reset . - it will clear the staging area.
 git reset -- hard - it will clear all the fles from stagging area and worinng area. 
 
 
+Git Revert - 
+the revert command helps you undo an existing commit.
+it does not delete any data in this process rather than git creates a new commit with the included files to the previous state. 
+so version control histroy moves forward while your files state moves as a backward stage. 
+
+difference b/w git revert and git reset
+git revert - after commit
+git reset - before commit
+
+Git revert Lab -
+Sudo su
+cd mumbaigit 
+ls
+git status 
+cat > newfile 
+HI, Final code for app 
+git add
+git commit -m " Final Code "
+git log --oneline
+git revert < commit-id >
+
+
+How to remove untracked files 
+git clean -n ( dry run )
+git clean -f ( forcefully )
+
+Tags
+Tag operation allows giving meaningful names to a specific version  in the repo
+
+To apply tag 
+git tag -a < tagname > -m < message > < commit_id >
+
+To see the list of tags 
+git tag
+
+To see particular commit content by using tag
+git show < Tag Name >
+
+To delete a tag
+git tag -d < tagname >
+
 
 
