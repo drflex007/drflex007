@@ -44,7 +44,7 @@ Solution - just open the file any editor and made some changees on it . git will
 Note - Every branch local repo push indivisually ( git push commnad only push branch local repo not every branch repo )
 
 
-Git Stashing- it is a storage which store files that you don't want in git production area. 
+Git Stashing- it is a storage which store code or feature in the particular file that you don't want in git production area. 
 
 it is a feature that will give you power to save your unfinished work( Code ) without adding to staging area or commiting.
 and work on the new code or new work at workplace area.
@@ -56,6 +56,7 @@ working on your stashing code.
 
 
 Note - you can store many files in the stashing , there is no limit on that. 
+Note -before adding your code to stash store,you  have to add the file staging area and commit your code or jsut empty file so git  can recognize your file. 
 
 Commands -
 To stash an Item
@@ -71,6 +72,45 @@ Note - when getting code from stash it will copy and paste in workplace area not
 To clear the stash items
         git stash clear
         
+Lab - 
+create a demofile - touch demofile
+add some content on it - cat > demofile # don't use this code 
+First line of code # don't use this code
+Ctrl + d # don't use this code
+
+add fie into staging are - git add .
+commit file -  git commit - " commit the file "
+
+now add the content to the  file - cat > demofile
+First Code
+ctrl + d
+
+now stash the current code - git stash 
+now see the demofile - cat demofile ( you will file not content is there )
+
+now see git stash list - git stash list 
+there you see some content.
+
+now add some content in the demo file -  cat > demofile 
+Second code. 
+
+now again the stash the code - git stash
+see the file content are clear - cat > demofile 
+
+retrive the code - git stash apply <copy the stash index point exmp- stash@{0} >
+
+see the conntent - cat demofile ( Content are back )
+
+clear stash list - git stash clear ( this will clear all the stash )
+
+Lab done. 
+
+git reset - clear the working area and staging area.
+when we don't want to work on the particular code.
+
+git reset . - it will clear the staging area.
+git reset -- hard - it will clear all the fles from stagging area and worinng area. 
+
 
 
 
