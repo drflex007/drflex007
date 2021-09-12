@@ -61,6 +61,15 @@ Used in-
 3. Development , Build and Test 
 4. Microservices 
 
+Compute Optimized Instances ( C - Series )
+Compute optimized instances are ideal for compute -bound applications that benefits from high  perormance processors:-
+Thre Type are availbale - C4, C5 , C5n 
+C4 Intances - are optimized for compute Intensive workloads and deliver very cost effctive high performance at a low price per compute ratio.
+VCPU - 2 to 36
+RAM - 3.75 to 60 GB
+Storage - EBS Only 
+Network B.W. - 10 Gbps 
+Use cases - Web Server, Batch processing , MMO Gaming , Video Encoding
 
 
 
