@@ -187,7 +187,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 
-sed -i.bak 's/following//gI' BSD.txt > /home/BSD_DELETE.txt
+sed -i.bak 's/\following\//gI' BSD.txt > /home/BSD_DELETE.txt
 
 sed -i.bak 's/\band\b/for/g' BSD.txt > /home/BSD_REPLACE.txt
 
