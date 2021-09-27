@@ -75,3 +75,74 @@ Implied Router & Route Table
 - You can also edit the main route table if you need, but you cannot delete main route table.
 - However you can make a custom route table manually become the main route table then you can delete the former main, as it it no longer main route table.
 - You can associate multiple subnets with the same route table. 
+
+
+Internet Gateway 
+- An Internet Gateway is a Virtual Router that connects a VPC to the internet.
+- Defualt VPC is already attached with an Internet Gateway.
+- If you Create a new VPC then you must attach the Internet Gateway in order to access the Internet.
+- Ensure that your Subnet's Route table points to the internet Gateway.
+- It performs NAT b/w your private and public IPv4 address.
+- It's supports both IPv4 and IPv6.
+
+
+Nat Gateways - (PAT - Port Address Translation)
+You can use a newtwork address translation gateway to enable instances in a private subnet to connect to the internet or other AWS Services, But prevent the internet from
+intiating a connection with these instances.
+
+--> You are charged for creating and using a NAT Gatway in your account. NAT Gatway hourly usage and data processing rates apply Amazon EC2 Charges for data transfer also apply.
+--> To Create a NAT Gateway, You must specify the public subnet in which the NAT Gateway should reside. 
+--> You must also specify an Elastic IP address to associate with NAT Gateway when you create it.
+--> No need to assign public IP address to your Private instance.
+--> After you have created a NAT Gateway you must update the Route Table associated with one or more of your Private Subnets to point Internet Bound traffic to the NAT 
+Gateway. This enables instances in your private Subnet to Communicate with the internet. 
+--> Deleting a NAT Gateway, disassociates its Elastic IP Address, but does not release the address from your account. so release the elastic ip address to not get extra charges 
+in your account. 
+
+
+Security Groups -
+-- > It is a virtual firewall works at ENI( Elastic Network Interface) level.
+-- > upto 5 security groups per EC2 instance interface can be applied.
+-- > Can Only have permit Rules, Can not have deny rule.
+-- > Stateful , Return traffic , of allowed inbound traffic is allowed , even if there are no rules to allow it. 
+
+Network ACL -
+
+-- > It is function performed on the Implied Router. 
+-- > NACL is on Optional Layer of Security for your VPC that acts as a firewall for controlling traffic in and Out of One or more Subnets.
+-- > Your VPC automatically comes with a modifiable default Network ACL by default it allows all inbound and outbound IPv4 traffic and if applicable, IPv6 traffic.
+-- > You can create a custom network ACL and associate it with a Subnet by default, each Custom Network ACL denies all inbound and outbound traffic until you add rules. 
+-- > Each subnet in your VPC must be associated with a Network ACL if you don't explicitly associate a Subnet with a Network ACL, the Subnet is automatically associated 
+with the Defualt Network ACL.
+-- > You can associate a Network ACL with multiple Subnet, however a Subnet can be associated with Only One network ACL at a time when you associate a Network ACL with 
+a Subnet, the previous association is removed. 
+-- > A network ACL contains a numbered list of rules that we evaluate in Order, Starting with the lowest numbered Rule. 
+-- > the highest number that you can use for a rule is 32766 recommeded that you start by creating rules with rule number that a multiple of 100, So that you can insert new 
+rules where you need later.
+-- > it functions at subnet level.
+-- > NACl are stateless, Outbound traffic for an allowed inbound traffic must be explicitly allowed too.
+-- > You can have permit and deny Rules in a NACL. 
+
+Difference in Security Groups and NACL.
+1. Security groups operated at instance level  and NACL operates at the Subnet Level. 
+2. Security Groups support allows rules only. and NACL permits allow as well as Deny rules.
+3. Security Groups are stateful, return traffic is automatically allowed and NACL stateless, return traffic must be explicitly allowed by Rules.
+4. Security Groups applies to an instance only and NACL applies to all instances in the subnet. 
+
+
+VPC Peering. 
+
+A VPC peering connection is a Networking connection b/w two VPC that enables you to route traffic b/w them using private IPv4 address or IPv6 addresses. 
+
+-- > Instances in either VPC can communicate with each other as if they are within the same network.
+-- > You can create a VPC Peering Connection b/w your own VPC or with a VPC in another AWS Account the VPC can be in differnet Region. 
+
+
+Transitive peering is possiable in AWS - no it is not possiable.
+Transitive peering means can instance in VPC A communicate to instance in VPC C throungh VPC B.
+
+VPC A --> VPC Peering --> VPC B --> VPC Peering --> VPC C
+
+
+
+
