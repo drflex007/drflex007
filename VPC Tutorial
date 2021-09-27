@@ -1,0 +1,10 @@
+A Virtual Private Cloud is a Virtual Network that closely resembles a traditional networking that you operate in your own datacenter , with the benefits of using the Saclable 
+infrastruture of AWS.
+OR
+VPC is a Virtual Network or Data Centre inside AWS for one client.
+
+- It is logically Isolated from other Virtual N/W in the AWS Cloud. 
+- MAX 5 VPC Can be created and 200 Subnets in 1 VPC
+- We Can allocate max 5 elastic IP.
+- Once We Created VPC, DHCP, NACL and Security Group will be automatically Created. 
+- A VPC is confined to an AWS Region and does not extend b/w regions.
