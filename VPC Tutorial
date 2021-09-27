@@ -8,3 +8,70 @@ VPC is a Virtual Network or Data Centre inside AWS for one client.
 - We Can allocate max 5 elastic IP.
 - Once We Created VPC, DHCP, NACL and Security Group will be automatically Created. 
 - A VPC is confined to an AWS Region and does not extend b/w regions.
+- Once the VPC is created, You cannot change its CIDR Block Range.
+- If you need a different CIDR size, Create a New VPC 
+- The different subnets within a VPC Cannot Overlap.
+- You Can however expand your VPC CIDR by adding New/Extra IP address Ranges ( Except GovCloud & AWS China )
+
+
+Components Of VPC 
+CIDR & IP Address Subnets
+  - Implied Router & Routing Table
+  - Internet Gateway
+  - Security Groups
+  - Network ACL
+  - Virtual Private Gateway 
+  - Peering Connections 
+  - Elastic IP
+  
+
+VPC Types -
+1. Defualt VPC 2. Custom VPC 
+
+Defualt VPC - 
+Created in Each AWS Region when an AWS Account is created. 
+- Has Defualt CIDR, Security Group, NACL and Route table settings
+- Has an Internet Gateway by default
+
+Custom VPC -
+Is a VPC an AWS Account Owner Creates 
+- AWS User Creating the Custom VPC can decide the CIDR.
+- Has its own default Security Group, Network ACL and Route Tables.
+- Does not have an Internet Gateway by default, One needs to be created if Needed.
+
+
+Steps to create a VPC.
+1. Create a VPC.
+2. Create a Subnet.
+3. Create a Internet gateway.
+4. Create a Route table. 
+
+
+Public Subnet- if a subnet's traffic is routed to an Internet Gateway, the subnet is known as a Public Subnet. if you want ypur instance in a Public Subnet to Communicate 
+with the internet over IPv4, it must have a public IPv4 address or an Elastic IP address.
+
+Private Subnet- if a Subnet does not have a route to the internet gateway, the Subnet is known as a Private Subnet.
+
+- When You Create a VPC, You must Specify an IPv4 CIDR Block for the VPC. The allowed block, Size is between /16 to /28 netmask.
+- The first for & last IP address of subnet cannot be assigned.
+
+10.0.0.0/16
+For example - 10.0.0.0 - network address
+10.0.0.1 - Reserved by AWS for the VPC Router.
+10.0.0.2 - Reserved by AWS the IP address of DNS Server
+10.0.0.3 - Reserved for future use.
+10.0.0.255 - Broadcast Address.
+
+Note - AWS do not support broadcast  in a VPC but Reversed the address.
+
+
+Implied Router & Route Table 
+- It is the Central Routing Function.
+- It connects the different AZ together and Connects the VPC to the Internet Gateway.
+- You can have upto 200 route tables per VPC.
+- You can have upto 50 Routes Entries per Route Table.
+- Each Subnet must be associated with only one Route Table at any Given time.
+- If you do not Specify a Subnet will be associated with the default VPC Route Table.
+- You can also edit the main route table if you need, but you cannot delete main route table.
+- However you can make a custom route table manually become the main route table then you can delete the former main, as it it no longer main route table.
+- You can associate multiple subnets with the same route table. 
