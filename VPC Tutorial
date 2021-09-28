@@ -144,5 +144,8 @@ Transitive peering means can instance in VPC A communicate to instance in VPC C 
 VPC A --> VPC Peering --> VPC B --> VPC Peering --> VPC C
 
 
-
-
+Scenriao - of LAB
+VPC with a Single Public Subnet.
+VPC with Public and Private Subnets 
+VPC with Public and Private Subnets and Hardware VPN Access.
+VPC with a Private Subnet Only and Hardware VPN Access. 
