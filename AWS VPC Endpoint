@@ -1,0 +1,3 @@
+A VPC Endpoint enables you to privately connect your VPC to supported AWS Services Instances in your VPC do not require public IP addresses to communicate with resources in the 
+services. 
+Endpoint are virtual devices 
