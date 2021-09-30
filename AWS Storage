@@ -1,0 +1,30 @@
+Types of Storage-
+1. Simple Storage Service (S3)
+2. Elastic File System (EFS)
+3. Elastic Block Storage (EBS)
+4. Glacier 
+5. Snowball
+
+AWS offer a  Complete Range of Cloud Storage Services to Support both application and archival Compliance requirements select from Objects, File and Block Storage Services as 
+well as cloud data Migration options to start desiging the foundation of Your Cloud IT Enviornment.
+
+Block Storage 
+-- > Block Storage is suitable for transactional databases, random read/write loads and structured databases storage.
+-- > Block Storage divides the data to be stored in evenly sized blocks ( data chunk ) for instance, a file can be split into evenly sized blocks before it is stored. 
+-- > Data Blocks stored in  block storage would not contain Metadata (data created, data modified, content type etc.)
+-- > Block Storage only keeps the address ( index ) where the data blocks are stored. it does not care what is in that block, just how to retrieve it when required.
+
+Object Storage 
+---> Object Storage stores the files as a whole and does not divide them. 
+---> In object storage, an object is 
+    -- > The file/data itself 
+    -- > Its metadata
+    -- > Object Global Unique ID
+
+---> The Object Global Unique ID, is a Unique Identifier for the Object ( Can be the object name itself )  and it must be unique such that it can be retrieved disregarding where 
+its physical storage location is. 
+--- > object storage can not be mounted as a Drive. 
+Example of Object Storage Solutions - Dropbox , AWS S3, Facebook. 
+
+Simple Storage Service ( S3 )
+
