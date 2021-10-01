@@ -28,3 +28,186 @@ Example of Object Storage Solutions - Dropbox , AWS S3, Facebook.
 
 Simple Storage Service ( S3 )
 
+---> S3 is a storage for the internet. It has a simple webservices interface for simple storing & retrieving of any amount of data. anytime from anywhere on the internet. 
+---> S3 is object based storage.
+---> You camnot install Operating System on S3.
+---> S3 has a distributed data-store architecture where objects are redundantly stored in  Mulitple Locations ( Min 3 Location in Same Region )
+---> Data is stored in Bucket.
+---> A Bucket is a flat container of objects.
+---> Max Capacity of a Bucket is 5 TB. 
+---> You can create folders in your Bucket ( available through Console )
+---> You cannot created Nested Buckets. 
+---> Bucket Ownership is Non-transferrable. 
+---> S3 Bucket is Region Specific.
+---> You can have upto 100 Buckets per account ( May expand on Request )
+
+You can access S3 bucket through https or http protocol. 
+
+S3 Buckets- Naming Rules
+---> S3 Bucket names (Keys) are globally unique across all AWS Regions.
+---> Bucket Names Cannot be change after they are created.
+---> If a bucket is deleted, its name becomes available again to you or other account to use. 
+---> Bucket names must be atleast 3 and no more than 63 charcters long. 
+---> Bucket names are part of the URL used to access a Bucket. 
+---> Bucket name must be a series of one or more labels ( XYZ Bucket). 
+---> Bucket names can contain lowercase, nummbers and hyphen cannot use uppercase letter. 
+---> Bucket name should not be an IP address (10.0.0.20) 
+---> Each label must start and end with a lowercase letter or a number. 
+---> By Default, buckets and its objects one private By Default, only owner can access the bucket. 
+
+S3 Buckets - Subresouces
+
+Sub-resources of S3 bucket includes -
+Lifecycle - To decide on objects Lifecycles Management. 
+Website - To hold configrations related to static Website hosted in S3 Buckets.
+Versioning - Keep Object versions as its changes ( Gets updated ) ( can be enable and suspend but can not be disabled )
+Access Control List - Bucket Policies. 
+
+
+The name is simply two parts - BucketRegion's endpoint/bucketname
+Example - for S3 bucket named mybucket in Europe West Region.
+https://s3-eu-west1.amazonaws.com/mybucket
+
+S3 Objects -
+An object size stored in an S3 bucket can be 0 byte  to 5 TB. 
+--->  Each object is stored and retrieved by a unique key ( ID or Name ) 
+---> An Object in AWS S3 is uniquely identified and addressed through
+    ---> Service Endpoint 
+    ---> Bucket Name
+    ---> Object Key ( Name )
+    ---> Optionally Object Version
+
+---> Object stored in a S3-bucket in a Region will never leave that Region unless you specifically move them to another region or CRR.
+---> A Bucket Owner Can grant cross-account permissions to another AWS account ( Or users in another account ) to Upload Objects.
+---> You can grant S3 bucket/ object permission to -
+     ---> Individual Users 
+     ---> AWS Account 
+     ---> Make the Resounce Public 
+     ---> or to all authenticate User. 
+     
+     
+S3 Bucket Versioning -
+
+---> Bucket Versioning is a S3 Bucket Sub-resouce used to protect against accidental Object/Data deletion or Overwrites.
+---> Versioning Can also be used for data retention and archive.
+---> Once you enable versioning on a Bucket, it cannot be disabled, however it can be suspended. 
+---> When enabled , Bucket Versioning will protect existing and new objects, and maintains thier Versions as they are Updated.
+---> Updating Objects refers to PUT, POST, COPY, DELETE actions on objects. 
+---> When Versioning is enabled and you try to delete an object, a delete Marker is placed on the object. 
+    ---> You can still view the object and the delete Marker.
+---> If you reconsider deleting the objects, you can delete the " Delete Marker "  and the object will be available again. 
+---> You will be charged foe all S3 storage cost for all object versions stored. 
+---> Yon can use versioning with S3 Lifecycle Policies to delete older Versions, Or You can move them to a Cheaper S3 Storage ( or Glacier ) 
+     Bucket Versioning State- 
+       -- Enabled 
+       -- Suspended 
+       -- Un-Versioned
+ ---> Versioning applies to all Objects in a bucket and not partially applied.
+ ---> Object Existing before enabling Versioning will have a Version ID or " Null" 
+ ---> If you have a bucket that is already Versioned, then you Suspend Versioning. existing Objects and thier Versions remain as it is. 
+     ---> However they will not be Updated/Versioned Further with future updates while the bucket Versioning is suspended.
+ ---> New Objects ( Uploaded after Suspension ) they will have a Version ID "Null".if the same key (name) is used to store another objects, it will override the existing one. 
+ ---> An Object deletion in a Suspended Versioning Buckets, will only delete the objects with ID " Null ".
+ 
+ 
+ S3 Bucket Versioning - MFA Delete
+ 
+ ---> Multifactor authentication delete is a Versioning Capacity that adds another level of Security in case your account is compromised.
+ --> This adds another layer of security for the follwing -
+    --> Changing you Bucket Versoning State. 
+    --> Permanently deleting an Object  Version.
+MFA Delete Requires - 
+---> Your Security Credentials 
+---> The Code displayed on an approved physical or S/W based authentication device.
+
+
+S3 Multipart Upload
+---> Is used to upload an object in parts. 
+---> Part are uploded indepently and in parallel, in any order. 
+---> It is recommended for objects sizes of 100 MB or larger. 
+---> You must use it for objects Larger than 5 GB.
+---> This is done through S3 Multipart Upload API.
+
+Coping S3 Objects 
+---> The Copy Operations Creates a Copy of an object that is already stored in Amazon S3.
+---> You can create a copy of your object upto 5 GB in size in a Single atomic operation. 
+---> However to copy an object greater than 5 GB, You must use the multipart upload API.
+---> Incur Charges, if copy to another region. 
+
+Use the copy operation to - 
+---> Generate addtional copies of the Subject. 
+---> Renaming Object ( Copy to a new name )
+---> Changing the Copy's storage class or encrypt it at rest.
+---> Move object across AWS location Region. 
+---> Change object Metadata.
+
+
+Storage Classes of Amazon S3
+1. Amazon S3-Standard
+2. Amazon S3 Glacier Deep Archive
+3. Amazon Glacier ( Long Term Storage )
+4. Amazon S3 Standard Infrequent Access ( Cost less but you pay to access it more frequently ).
+5. Amazon S3 One-Zone - IA
+6. Amazon S3 Intelligent Tiering.
+
+Removed from Amazon S3 ( S3 - Reduced Redundancy Storage )
+
+Amazon S3 Standard 
+---> S3 standard offers high durability, availabilty and performance object storage for frequently accessed data.
+---> Durabitity is 99.999999999% ( 11 times 9 ) 
+---> Designed for 99.99% availabltity over given year. 
+---> Support SSL for data in-transit and encryption of data at rest. 
+---> The storage cost for the object is fairly high, but there is Very less charge for accessing the objects.
+---> Largest object that can be uploaded in a single PUT is 5 GB.
+
+Amazon S3 - IA
+---> S3 -IA is for data that is accessed less frequently, but requires rapid access when needed. 
+---> The storage cost is much cheaper than S3- standard, almost half the price. But you are charged more heavily for accessing your object. 
+---> Durabilty is 99.999999999 % .
+---> Resilient against events that impact an entire AZ.
+---> Avalibity is 99.9 % in year.
+---> Support SSL for data in transit and encryption of data at rest.
+---> Data that is deleted from S3-IA within 30 days will be charged for a full 30 days.
+---> Backed with the Amazon S3 Service level Agreement for availablity. 
+
+
+Amazon S3 Intenlligent Tiering 
+---> The S3 intelligent tiering storage class is designed to optimize cost by automatically moving data to the most cost effective access-tier. 
+---> It works by storing objects in two access tiers.
+---> if a object in the infrequent access tier is accessed, it is automatically moved back to the frequent access tier.
+---> There  are no retrieval fees when using the S3-Intelligent Tiering storage class and no additional tiering fee when objects are moved between accesss tiers.
+---> Some low latency and high performance of S3-Standard.
+---> Object lses than 128 KB Cannot move to IA.
+---> Durability is 99.999999999 % (11 nine)
+---> Availability is 99.9%.
+
+Amazon One-Zone IA
+S3-One Zone-IA is for data that is accessed less frequently, but requires rapid access when needed. 
+---> Data stores in single AZ.
+---> Ideal for those, who want lower cost option of IA-data.
+---> It is good choice for storing secondary backup copies of On-premise data or easily Re-Creatable data.
+---> You can use S3 Lifecycle policies. 
+---> Durability is 99.999999999 % ( 11 nine )
+---> Availability is 99.5 %
+---> Because S3 One Zone-IA stores data in a Single AZ, data stored in this storage class will be lost in the event of AZ destruction. 
+
+Amazon S3 Glacier
+---> S3 Glacier is a Secure, durable, low cost storage class for data Archiving. 
+---> To keep Cost low, yet suitable for varying needs, S3 Glacier provides three reterievl opitons that range from a few minuntes to hours.
+---> You can upload object directly to Glacier or use Lifecycle policies.
+---> Durability is 99.999999999 % ( 11 Nine )
+---> Data is resillient in the event of one entire AZ destruction. 
+---> Support SSL for data in transit and encryption data at Rest.
+---> You can retrieve 10 GB of your amazon S3 Glacier data per month for free with free tier account. 
+
+Amazon S3 Glacier Deep Archieve. 
+---> S3 glacier deep archive is Amazon S3 cheapest storage.
+---> Design  to retain data for long period eg - 10 years.
+---> All objects stored in S3- Glacier Deep Archive are replicated and stored across atleast at three geographically dispersed AZ.
+---> Durability is 99.999999999 % ( 11 Nine )
+---> Ideal alternative to magnetic tape libaries. 
+---> Resterieval time within 12 hours.
+---> Storage Cost is upto 75% less than for the existing S3-Glacier Storage Class.
+---> Availability is 99.9 %. 
+
+
