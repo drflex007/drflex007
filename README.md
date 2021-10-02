@@ -4,8 +4,8 @@
 - 💞️ I’m looking to collaborate on with same have learn eggerness
 - 📫 How to reach me 
 ### Hello World 👋
-I am a fullstack software engineer from bangladesh
-- 🔭 Working on multiple frontend and backend project using React and Nodejs
+I am a NOC Engineer from India
+- 🔭 Working as NOC Engineer in DEN Network.
 - 🌱 Learning design patterns in depth
 <br>
 ## Connect with me
