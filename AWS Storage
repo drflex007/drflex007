@@ -21,8 +21,8 @@ Object Storage
     -- > Its metadata
     -- > Object Global Unique ID
 
----> The Object Global Unique ID, is a Unique Identifier for the Object ( Can be the object name itself )  and it must be unique such that it can be retrieved disregarding where 
-its physical storage location is. 
+---> The Object Global Unique ID, is a Unique Identifier for the Object ( Can be the object name itself )  and it must be unique such that it can be retrieved disregarding 
+where its physical storage location is. 
 --- > object storage can not be mounted as a Drive. 
 Example of Object Storage Solutions - Dropbox , AWS S3, Facebook. 
 
