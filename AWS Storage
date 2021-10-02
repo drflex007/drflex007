@@ -77,7 +77,7 @@ An object size stored in an S3 bucket can be 0 byte  to 5 TB.
     ---> Object Key ( Name )
     ---> Optionally Object Version
 
----> Object stored in a S3-bucket in a Region will never leave that Region unless you specifically move them to another region or CRR.
+---> Object stored in a S3-bucket in a Region will never leave that Region unless you specifically move them to another region or CRR(Cross Region Replication).
 ---> A Bucket Owner Can grant cross-account permissions to another AWS account ( Or users in another account ) to Upload Objects.
 ---> You can grant S3 bucket/ object permission to -
      ---> Individual Users 
@@ -101,7 +101,7 @@ S3 Bucket Versioning -
      Bucket Versioning State- 
        -- Enabled 
        -- Suspended 
-       -- Un-Versioned
+       -- Un-Versioned ( until when you not enabled versioning )
  ---> Versioning applies to all Objects in a bucket and not partially applied.
  ---> Object Existing before enabling Versioning will have a Version ID or " Null" 
  ---> If you have a bucket that is already Versioned, then you Suspend Versioning. existing Objects and thier Versions remain as it is. 
