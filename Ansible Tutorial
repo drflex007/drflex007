@@ -1,0 +1,14 @@
+Ansible is a configuration management tool.
+
+Ansible is an open source IT Configuration Management, Deployment and Orchestartion Tool. It aims to provide large productivity gains to a wide variety of Automation Challenges.
+
+Ansible History 
+--> Michael Dehaan developed Ansible and the ansible project begin in February 2012.
+--> Redhat acquired the ansible tool in 2015.
+--> Ansible is available for RHEL, Debian, CentOS, Oracle Linux.
+--> Can use this tool whether your servers are in on-premises or in the cloud.
+--> It turns your code into infrastructure i.e. Your Computing environment has some of the same attributes as your application. 
+
+
+Ansible is agentless tool. 
+Ansible is communcating to nodes using ssh protocol.
