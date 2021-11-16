@@ -1,0 +1,17 @@
+Jenkins are open source tool and it is wriiten in java , so it is required java should be installed in your system.
+Jenkins are supported by Community and there are lots of plugins available.
+Jenkins automate entire Software Development Life Cycle.
+Jenkins are developed by Sun MicroSystem in 2004 under the name of Hudson.
+The project was later named Jenkins when orcale bought mircosystem. 
+It can run on any major plateform without any compatiblity issues.
+Developer writes a code ---> push to version control system ---> maven or gradle bulid the code ---> Selenium or Junit test the code ---> Chef or Puppet deploy the code 
+ ---> Nagios monitor the app. This is called CI/CD Pipeline. Jenkins inetregate all those tool and make the CI/CD pipeline Smooth.
+ 
+ Jenkins are good tool for Contious interation but not good for Continous Deployment.  
+ 
+ Jenkins have lots of Plugins and due to community support it is so popular.
+ 
+ We can attach slaves ( Nodes ) to jenkins master. It instruct others ( Slaves ) to do job. If slaves are not available, Jenkins itself does the job.
+ 
+
+ 
